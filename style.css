@@ -395,7 +395,7 @@ section{
   font-size: 3rem;
 }
 
-/* Form Layout */
+
 .contact form {
   max-width: 700px;
   margin: 0 auto;
@@ -404,13 +404,13 @@ section{
   gap: 1.5rem;
 }
 
-/* Input Box */
+
 .contact form .input-box {
   position: relative;
   width: 100%;
 }
 
-/* Inputs & Textarea */
+
 .contact form .input-box input,
 .contact form .input-box textarea {
   width: 100%;
@@ -425,7 +425,7 @@ section{
   resize: none;
 }
 
-/* Floating Labels */
+
 .contact form .input-box label {
   position: absolute;
   top: 50%;
@@ -439,7 +439,7 @@ section{
   padding: 0 5px;
 }
 
-/* Float label when active */
+
 .contact form .input-box input:focus + label,
 .contact form .input-box input:not(:placeholder-shown) + label,
 .contact form .input-box textarea:focus + label,
@@ -450,7 +450,7 @@ section{
   color: #ff6600;
 }
 
-/* Focus & Hover Effects */
+
 .contact form .input-box input:focus,
 .contact form .input-box textarea:focus {
   border-color: #ff6600;
@@ -463,13 +463,13 @@ section{
   box-shadow: 0 0 8px rgba(255, 153, 0, 0.3);
 }
 
-/* Placeholder (hidden by default, but kept for floating effect) */
+
 .contact form input::placeholder,
 .contact form textarea::placeholder {
   color: transparent;
 }
 
-/* Button */
+
 .contact form .btn {
   align-self: center;
   background: linear-gradient(90deg, #ff6600, #ff9900);
@@ -490,7 +490,7 @@ section{
   box-shadow: 0 6px 20px rgba(255, 102, 0, 0.5);
 }
 
-/* Responsive */
+
 @media (max-width: 600px) {
   .contact form {
     padding: 0 1rem;
@@ -498,14 +498,14 @@ section{
 }
 
 
-/* Pulse Animation */
+
 @keyframes pulse {
   0% { box-shadow: 0 0 10px rgba(255, 102, 0, 0.4); }
   50% { box-shadow: 0 0 20px rgba(255, 102, 0, 0.7); }
   100% { box-shadow: 0 0 10px rgba(255, 102, 0, 0.4); }
 }
 
-/* Responsive */
+
 @media (max-width: 600px) {
   .contact form .input-box {
     flex-direction: column;
