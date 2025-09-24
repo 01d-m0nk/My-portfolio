@@ -406,98 +406,97 @@ section{
 
 /* Input Box */
 .contact form .input-box {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
   position: relative;
+  width: 100%;
 }
 
-/* Inputs */
-.contact form .input-box input {
-  flex: 1;
-  min-width: 48%;
-  padding: 1rem;
-  font-size: 1.2rem;
-  color: var(--text-color);
-  background-color: transparent;
-  border: 1.5px solid var(--main-color);
-  border-radius: 0.8rem;
-  transition: 0.3s;
-}
-
-/* Textarea */
+/* Inputs & Textarea */
 .contact form .input-box input,
-.contact form textarea {
+.contact form .input-box textarea {
   width: 100%;
   padding: 1rem;
-  border: 1px solid orange;
-  border-radius: 0.5rem;
-  margin-bottom: 1.5rem; /* 👈 equal gap for all fields */
-  resize: none;
+  font-size: 1.1rem;
+  color: var(--text-color);
   background: transparent;
-  color: #fff;
+  border: 1.5px solid var(--main-color);
+  border-radius: 0.8rem;
+  outline: none;
+  transition: 0.3s;
+  resize: none;
 }
 
-
-/* Focus & Hover Effects */
-.contact form .input-box input:focus,
-.contact form textarea:focus {
-  border-color: #ff6600;
-  box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
-}
-
-.contact form .input-box input:hover,
-.contact form textarea:hover {
-  border-color: #ff9900;
-  box-shadow: 0 0 8px rgba(255, 153, 0, 0.3);
-}
-
-/* Placeholder Styling */
-.contact form input::placeholder,
-.contact form textarea::placeholder {
-  color: #aaa;
-  font-style: italic;
-}
-
-/* Floating Label Effect */
+/* Floating Labels */
 .contact form .input-box label {
   position: absolute;
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
   font-size: 1rem;
-  color: #666;
+  color: #888;
   pointer-events: none;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  background: var(--bg-color);
+  padding: 0 5px;
 }
 
+/* Float label when active */
 .contact form .input-box input:focus + label,
-.contact form .input-box input:not(:placeholder-shown) + label {
-  top: -10px;
+.contact form .input-box input:not(:placeholder-shown) + label,
+.contact form .input-box textarea:focus + label,
+.contact form .input-box textarea:not(:placeholder-shown) + label {
+  top: -8px;
   left: 10px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #ff6600;
 }
 
+/* Focus & Hover Effects */
+.contact form .input-box input:focus,
+.contact form .input-box textarea:focus {
+  border-color: #ff6600;
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+}
+
+.contact form .input-box input:hover,
+.contact form .input-box textarea:hover {
+  border-color: #ff9900;
+  box-shadow: 0 0 8px rgba(255, 153, 0, 0.3);
+}
+
+/* Placeholder (hidden by default, but kept for floating effect) */
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+  color: transparent;
+}
+
+/* Button */
 .contact form .btn {
   align-self: center;
   background: linear-gradient(90deg, #ff6600, #ff9900);
   color: #fff;
-  font-size: 1.4rem;
-  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
   border: none;
   border-radius: 2rem;
   cursor: pointer;   
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
   animation: pulse 2s infinite;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
-.contact form button:hover {
+.contact form .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(255, 102, 0, 0.5);
 }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact form {
+    padding: 0 1rem;
+  }
+}
+
 
 /* Pulse Animation */
 @keyframes pulse {
@@ -615,3 +614,25 @@ section{
   color: #ddd;                  
 }
 
+#spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;        
+  border-top: 3px solid #3498db; 
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#form-status {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #fff; 
+}
